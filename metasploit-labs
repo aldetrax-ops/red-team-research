@@ -1,1 +1,18 @@
 Metasploit
+# Security Assessment Simulation
+This repository documents the methodology for simulating real-world brute-force attacks to validate defensive detection capabilities.
+
+## Methodology
+- **Simulation Environment:** Kali Linux Attacker VM targeting a Rocky Linux service.
+- **Attack Vector:** SSH Brute-Force simulation utilizing the Metasploit Framework (`ssh_login` auxiliary).
+- **Wordlist Strategy:** Created custom `user.txt` and `pass.txt` files to simulate dictionary-based credential harvesting against the target host.
+
+## Operational Workflow
+1. **Reconnaissance:** Validated network reachability and confirmed SSH service availability.
+2. **Exploitation:** Configured `msfconsole` auxiliary modules to automate authentication attempts with defined `stop_on_success` and `verbose` settings.
+3. **Detection Validation:** Monitored the target system's log ingestion pipeline to verify that the attack traffic was captured as an indicator of compromise (IoC).
+
+## Security Assessment Findings
+- Validated the effectiveness of host-level intrusion prevention systems by simulating high-volume authentication traffic.
+- Confirmed that attack payloads were successfully logged within the centralized SIEM infrastructure.
+- The Metasploit successful exploitation result
